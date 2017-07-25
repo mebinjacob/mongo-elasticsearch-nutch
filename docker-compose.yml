@@ -1,5 +1,5 @@
 nutch:
-  image: kinetic/nutch
+  image: tpickett/nutch
   ports:
     - "8083:8080"
     - "8084:8081"
@@ -7,13 +7,13 @@ nutch:
     - "mongoNutch:mongo"
     - "elasticsearchNutch:elasticsearch"
   environment:
-    - SEEDLIST="http://reddit.com/r/node/"
+    - SEEDLIST="http://www.snopes.com/"
 mongoNutch:
   image: mongo
   ports:
     - "27020:27017"
   volumes:
-    - "./data/mongo:/data/db"
+    - "mongo:/data/db"
 elasticsearchNutch:
   image: elasticsearch:1.4
   ports:

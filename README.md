@@ -20,6 +20,10 @@ Make sure you have installed all of the following prerequisites on your developm
 ```
 docker build -t tpickett/nutch .
 ```
+### Create Volume for data storage
+```
+docker volume create mongo
+```
 
 ## Use with existing mongodb and elasticsearch servers
 ```
@@ -36,7 +40,7 @@ docker-compose up
 You have your nutch crawler started, but there is a lot of stuff to understand. We recommend you go over the [Nutch tutorials](http://wiki.apache.org/nutch/#Tutorials).
 In the tutorials they will go over the process of crawling/indexing etc... After familiarizing yourself with Apache Nutch enter the container to start using Nutch!
 ```
-docker exec -it nutch bin/bash
+docker exec -it mongoelasticsearchnutch_nutch_1 /bin/bash
 mkdir $NUTCH_HOME/runtime/local/urls
 touch $NUTCH_HOME/runtime/local/urls/seed.txt
 echo "http://reddit.com" >> $NUTCH_HOME/runtime/local/urls/seed.txt
