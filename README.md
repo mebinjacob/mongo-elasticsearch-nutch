@@ -52,13 +52,6 @@ $NUTCH_HOME/runtime/local/bin/nutch updatedb -all
 $NUTCH_HOME/runtime/local/bin/nutch index -all
 ```
 
-## For Fake News Project - steps
-1. Install docker and docker compose.
-2. Open powershell and Run the below commands.
-3. docker build -t tpickett/nutch .
-4. docker volume create mongo
-5. docker-compose up
-6. Then start from the "Getting Started With Apache Nutch Section"
 
 ## License
 (The MIT License)
